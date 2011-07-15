@@ -1,0 +1,24 @@
+p#notice= notice
+
+- unless @product.category.blank?
+  h2
+    = link_to(@product.category.description, @product.category)
+    | : 
+    = @product.name
+- else
+  h2
+    = link_to("No Category", new_category_path)
+    | : 
+    = @product.name
+    
+p
+  b Description: 
+  = @product.description
+h1="$ #{@product.price}"
+  
+p
+  h2(class='#{@product.active? ? "green" : "red"}')= @product.active? ? "Product Actived" : "Product Desactived"
+  
+= link_to 'Edit', edit_product_path(@product)
+= "  |  "
+= link_to 'Back', products_path

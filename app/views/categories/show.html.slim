@@ -1,0 +1,19 @@
+p#notice= notice
+p
+  h2="#{@category.description} (#{@category.products.count})"
+
+table 
+  tr
+    th *
+    th Name
+    th Price ($)
+  - @category.products.each_with_index do |p, index|
+    tr
+      td= index + 1  
+      td= p.name
+      td= "$ #{p.price}"
+br  
+
+= link_to 'Edit', edit_category_path(@category)
+= "   |   "
+= link_to 'Back', categories_path

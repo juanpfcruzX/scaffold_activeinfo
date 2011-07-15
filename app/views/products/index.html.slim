@@ -1,0 +1,77 @@
+h1
+  - if params[:active] == 'true'
+    = "Active Products (#{@products.count})"
+  - elsif params[:active] == 'false'
+    = "Inactive Products (#{@products.count})"
+  - else
+    = "Listing products (#{@products.count})"
+
+.fr
+  = form_tag('/products', :method => "GET", :id => "filter") do
+    = select_tag(:active, options_for_select([['Filter', ' '], ['show all', 'all'], ['active', 'active'], ['inactive', 'inactive']]), :id => "filter")
+
+.fr
+  = form_tag('/products', :method => "GET", :id => "category") do
+    = select_tag :category, options_for_select(@categories.collect {|c| [c.description, c.id]}), :include_blank => "Category"
+    
+table
+  tr
+    th *
+    th Name
+    th Description
+    th Price
+    th Active?
+    th Category
+    th colspan="3" Actions
+    
+  - @products.each_with_index do |product, index|
+    tr class="#{product.active? ? 'active' : 'inactive'} #{product.category.description rescue 'nocategory'}"
+      td= index + 1
+      td= "#{product.name[0..32]}..."
+      td= "#{product.description[0..14]}..."
+      td= product.price
+      td
+        - if product.active? 
+          img src="/images/active.png"
+        - else
+          img src="/images/noactive.png"
+          
+      td= link_to product.category.description, product.category rescue "sem categoria"  
+      td= link_to 'Show', product
+      td= link_to 'Edit', edit_product_path(product)
+      td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+br
+a.button.blue.large(href="#{new_product_path}") New Product
+
+javascript:
+  $('form#filter').change(function(){
+    if($('select#filter').val() == 'active'){
+      $('tr').fadeIn();
+      $('tr.inactive').fadeOut();
+    }    
+    else if($('select#filter').val() == 'inactive'){
+       $('tr').fadeIn();
+       $('tr.active').fadeOut();
+    }    
+    else if($('select#filter').val() == 'all'){
+      $('tr').fadeIn();
+    }
+  })
+
+javascript:
+  $('form#category').change(function(){
+    if($('select#category').val() == '1'){
+      $('tr').fadeIn();
+      $('tr.Clocks').fadeOut();
+      $('tr.nocategory').fadeOut();
+    }    
+    else if($('select#category').val() == '2'){
+      $('tr').fadeIn();
+       $('tr.Books').fadeOut();
+       $('tr.nocategory').fadeOut();
+    }    
+    else {
+      $('tr').fadeIn();
+    }
+  })
+   

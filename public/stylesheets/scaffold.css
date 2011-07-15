@@ -1,0 +1,174 @@
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;   
+}
+
+body {background-color: #049; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: blue; }
+a:hover { color:orange}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+table {
+  width: 100%;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4em;
+  font-style: normal;
+  border-collapse: separate;    
+}
+
+th,td {text-align: left;}
+
+th {
+  padding: 15px;
+  color: white;
+  text-shadow: 1px 1px 1px #568F23;
+  border: 1px solid #93CE37;
+  border-bottom: 3px solid #9ED929;
+  background: -moz-linear-gradient( center bottom, #7BC043 2%, #8BC642 51%, #9ED929 87% );
+  background: -webkit-gradient( linear, left bottom, left top, color-stop(0.02, #7BC043), color-stop(0.51, #8BC642), color-stop(0.87, #9ED929) );
+  background: -moz-linear-gradient( center bottom, #7BC043 2%, #8BC642 51%, #9ED929 87% );
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+td {
+  padding: 10px;
+  background-color: #DEF3CA;
+  border: 2px solid #E7EFE0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #666;
+  text-shadow: 1px 1px 1px white;  
+}
+
+
+
+#content {
+  width: 910px;
+  background: white;
+  margin: 10px auto;
+  padding: 15px; 
+  display: none; 
+  border-radius: 10px;
+}
+
+.green {color: #393;}
+.red   {color: red; }
+
+body.categories {background: #393;}
+
+.button, .button:visited {
+  background: #222 url(overlay.png) repeat-x;
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid #56820A;
+  position: relative;
+  cursor: pointer
+}
+
+.small.button, .small.button:visited { font-size: 11px}
+.button, .button:visited,
+.medium.button, .medium.button:visited
+{ 
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+.large.button, .large.button:visited 
+{ 
+  font-size: 14px;
+  padding: 8px 14px 9px;
+}
+
+.super.button, .super.button:visited {
+  font-size: 34px;
+  padding: 8px 14px 9px;
+}
+
+.pink.button, .magenta.button:visited { background-color: #e22092; }
+.pink.button:hover          { background-color: #c81e82; }
+.green.button, .green.button:visited  { background-color: #91bd09; }
+.green.button:hover               { background-color: #749a02; }
+.red.button, .red.button:visited    { background-color: #e62727; }
+.red.button:hover         { background-color: #cf2525; }
+.orange.button, .orange.button:visited  { background-color: #ff5c00; }
+.orange.button:hover        { background-color: #d45500; }
+.blue.button, .blue.button:visited            { background-color: #2981e4; }
+.blue.button:hover          { background-color: #2575cf; }
+.yellow.button, .yellow.button:visited  { background-color: #ffb515; }
+.yellow.button:hover        { background-color: #fc9200; }
+
+
+h1#time {
+  float: right;
+  color: #ccc;
+  font-size: 42px;
+  margin:0; padding: 0 0 0 45px;  
+  background: url('/images/clock.png') center left no-repeat;
+}
+
+.fr {float: right;}
+
+.fr select {
+  padding: 5px 10px;
+}

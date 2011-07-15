@@ -1,0 +1,24 @@
+!doctype
+html
+  head      
+    title Store - Categories
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag    
+    javascript:
+      $("document").ready( function() {
+        $("#content").fadeIn(1000);
+        $('.welcome').slideToggle().delay(3500).slideToggle();        
+      });    
+  body class="#{params[:controller]}"
+    #content
+      h1#time.jclock
+      = yield
+    #footer
+
+script src="http://plugins.jquery.com/files/jquery.jclock-1.2.0.js.txt" type="text/javascript"
+
+javascript:
+  $(function($) {
+    $('.jclock').jclock();
+  });
